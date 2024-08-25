@@ -1,12 +1,13 @@
-import { useState } from "react"
+type FormProps = {
+  setCity: React.Dispatch<React.SetStateAction<String>>
+  getWeather: (e: React.FormEvent<HTMLFormElement>) => void
+}
 
-const Form = () => {
-  const [city, setCity] = useState("")
+const Form = (props: FormProps) => {
 
   return (
-    <form>
-      <input type="text" name="city" placeholder="都市名" onChange={e => setCity(e.target.value)}/>
-      {city}
+    <form onSubmit={props.getWeather}>
+      <input type="text" name="city" placeholder="都市名" onChange={e => props.setCity(e.target.value)}/>
       <button type="submit">Get Weather</button>
     </form>
   )
