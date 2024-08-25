@@ -10,7 +10,7 @@ type ResultsProps = {
 
 const Results = (props: ResultsProps) => {
   return (
-    <div>
+    <>
       {props.results.country && 
       <div>
         <div className="results-country">{props.results.country}</div>
@@ -24,7 +24,7 @@ const Results = (props: ResultsProps) => {
       </div>
       }
       
-    </div>
+    </>
   )
 }
 
